@@ -1,12 +1,12 @@
 {
-   "Name": "Seasonal Villager Outfits for Diverse Stardew Valley",
-   "Author": "coded by cel10e based on DSV by notsnufffie and SVO by Tanpoponoko + ParadigmNomad (full credits in download)",
-   "Version": "1.1.0",
-   "Description": "Adds ethnic, cultural, gender, and body type diversity to Pelican Town, with complete seasonal outfits for every villager!",
-   "UniqueID": "cel10e.DiverseSeasonalOutfits",
-    "MinimumApiVersion": "2.11.0",
-"UpdateKeys": [ "Nexus:4079" ],
-   "ContentPackFor": {
-      "UniqueID": "Pathoschild.ContentPatcher",
-   }
+	"Name": "Seasonal Villager Outfits for Diverse Stardew Valley",
+	"Author": "coded by cel10e based on DSV by notsnufffie and SVO by Tanpoponoko + ParadigmNomad (full credits in download)",
+	"Version": "1.1.1",
+	"Description": "Adds ethnic, cultural, gender, and body type diversity to Pelican Town, with complete seasonal outfits for every villager!",
+	"UniqueID": "cel10e.DiverseSeasonalOutfits",
+	"MinimumApiVersion": "2.11.0",
+	"UpdateKeys": [ "Nexus:4079" ],
+	"ContentPackFor": {
+		"UniqueID": "Pathoschild.ContentPatcher",
+	   }
 }

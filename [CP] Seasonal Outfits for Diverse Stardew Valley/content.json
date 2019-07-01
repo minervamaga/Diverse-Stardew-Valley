@@ -3408,7 +3408,7 @@
             }
         },
         {
-            "LogName": "Sebastian - Spring",
+            "LogName": "Sebastian - Spring Black",
             "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -3416,11 +3416,12 @@
             {
                 "SebastianVariant": "modded",
                 "SebastianHairColor": "black",
+                "SebastianSpringAltHoodie": false,
                 "Season": "spring",
             }
         },
         {
-            "LogName": "Sebastian - Spring",
+            "LogName": "Sebastian - Spring Purple",
             "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -3428,11 +3429,25 @@
             {
                 "SebastianVariant": "modded",
                 "SebastianHairColor": "purple",
-                "SebastianSpringAltHoodie": "false",
+                "SebastianSpringAltHoodie": false,
                 "Season": "spring",
             }
-        },{
-            "LogName": "Sebastian - Spring",
+        },
+        {
+            "LogName": "Sebastian - Spring Alt Black",
+            "Action": "Load",
+            "Target": "Portraits/Sebastian",
+            "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}_Alt.png",
+            "When":
+            {
+                "SebastianVariant": "modded",
+                "SebastianHairColor": "black",
+                "SebastianSpringAltHoodie": true,
+                "Season": "spring",
+            }
+        },
+        {
+            "LogName": "Sebastian - Spring Alt Purple",
             "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}_Alt.png",
@@ -3440,7 +3455,7 @@
             {
                 "SebastianVariant": "modded",
                 "SebastianHairColor": "purple",
-                "SebastianSpringAltHoodie": "true",
+                "SebastianSpringAltHoodie": true,
                 "Season": "spring",
             }
         },
@@ -3826,7 +3841,8 @@
             "When":
             {
                 "AbigailVariant": "vanilla",
-                "Season": "spring, summer, fall"
+                "Season": "spring, summer, fall",
+                "HasFile:Abigail_{{season}}{{RainSeasonalVariant}}_{{AbigailRainHat}}.png": true
             }
         },
         {
@@ -4394,15 +4410,29 @@
         // Gus sprites and portraits are in the Diverse section above.
         // Haley
         {
-            "LogName": "Haley Spring Indoor",
+            "LogName": "Haley Spring Indoor Alt",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor.png",
+            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor_White.png",
             "When":
             {
                 "Season": "spring",
                 "Weather": "sun, wind",
                 "HaleyVariant": "vanilla",
+                "HaleySpringAltOutfit": true
+            }
+        },
+        {
+            "LogName": "Haley Spring Indoor",
+            "Action": "Load",
+            "Target": "Characters/Haley",
+            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor_Pink.png",
+            "When":
+            {
+                "Season": "spring",
+                "Weather": "sun, wind",
+                "HaleyVariant": "vanilla",
+                "HaleySpringAltOutfit": false
             }
         },
         {
