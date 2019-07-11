@@ -293,9 +293,9 @@
             "AllowValues": "black, albino"
         },
         // Elliott
-        "ElliottFacing":
+        "ElliottVanillaStyle":
         {
-            "AllowValues": "side, front",
+            "AllowValues": "vanilla, eemiestardew, sabreene",
         },
         "ElliottSummerVariant":
         {
@@ -544,14 +544,14 @@
             }
         },
         {
-            "LogName": "Abigail Sprites - Rain",
+            "LogName": "Abigail Sprites - Spring, Summer & Fall Rain",
             "Action": "Load",
             "Target": "Characters/Abigail",
             "FromFile": "Characters/Abigail/Modded/{{AbigailBodyType}}/Abigail_{{season}}{{RainSeasonalVariant}}_{{AbigailRainHat}}.png",
             "When":
             {
                 "AbigailVariant": "modded",
-                "Season": "summer, fall"
+                "Season": "spring, summer, fall"
             }
         },
         {
@@ -559,17 +559,6 @@
             "Action": "Load",
             "Target": "Characters/Abigail",
             "FromFile": "Characters/Abigail/Modded/{{AbigailBodyType}}/Abigail_{{season}}{{Indoor_SeasonalVariant}}_{{AbigailSpringJacketColor}}.png",
-            "When":
-            {
-                "AbigailVariant": "modded",
-                "Season": "spring"
-            }
-        },
-        {
-            "LogName": "Abigail Sprites - Spring Rain",
-            "Action": "Load",
-            "Target": "Characters/Abigail",
-            "FromFile": "Characters/Abigail/Modded/{{AbigailBodyType}}/Abigail_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
                 "AbigailVariant": "modded",
@@ -698,6 +687,17 @@
                 "AlexVariant:disable": "false"
             }
         },
+        {
+          "LogName": "Alex Heart Event Portrait",
+          "Action": "EditImage",
+          "Target": "LooseSprites/Cursors",
+          "FromFile": "assets/CursorsAlex.png",
+          "ToArea": { "X": 416, "Y": 1936, "Width": 115, "Height": 60 },
+          "When":
+          {
+            "AlexVariant": "hispanic, samoan",
+          }
+       },
         // Caroline
         
         {
@@ -836,6 +836,20 @@
                 "DayEvent:stardew valley fair": "false",
             }
         },
+        {  
+            "LogName": "Caroline Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Caroline",
+            "FromFile": "Portraits/Caroline/Modded/{{CarolineHairColor}}/Caroline_Fall_{{CarolineFallVariant}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "Weather": "sun, wind",
+                "CarolineVariant": "modded",
+                "DayOfWeek:Tuesday": "true",
+                "DayEvent:stardew valley fair": "true",
+            }
+        },
         // Clint
         // No modded version for Clint currently.
         // Demetrius
@@ -916,21 +930,77 @@
        },
         // Elliott
         {
-            "LogName": "Elliott Spring, Summer, & Fall Rain",
+            "LogName": "Elliott Spring & Fall Rain",
             "Action": "Load",
             "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Modded/Elliott_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Characters/Elliott/{{ElliottVariant}}/Elliott_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
-                "ElliottVariant": "modded",
+                "Season": "spring, fall",
+                "ElliottVariant:disable": "false",
             }
         },
         {
             "LogName": "Elliott Spring & Fall",
             "Action": "Load",
             "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Modded/Elliott_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "FromFile": "Characters/Elliott/{{ElliottVariant}}/Elliott_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "When":
+            {
+                "Season": "spring, fall",
+                "ElliottVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Elliott Summer",
+            "Action": "Load",
+            "Target": "Characters/Elliott",
+            "FromFile": "Characters/Elliott/{{ElliottVariant}}/Elliott_{{season}}{{Indoor_SeasonalVariant}}_{{ElliottSummerVariant}}.png",
+            "When":
+            {
+                "Season": "summer",
+                "ElliottVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Elliott Summer Rain",
+            "Action": "Load",
+            "Target": "Characters/Elliott",
+            "FromFile": "Characters/Elliott/{{ElliottVariant}}/Elliott_{{season}}{{RainSeasonalVariant}}_{{ElliottSummerRainVariant}}.png",
+            "When":
+            {
+                "Season": "summer",
+                "ElliottVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Elliott Winter",
+            "Action": "Load",
+            "Target": "Characters/Elliott",
+            "FromFile": "Characters/Elliott/{{ElliottVariant}}/Elliott{{WinterSeasonalVariant}}.png",
+            "When":
+            {
+                "ElliottVariant:disable": "false",
+            }
+        },
+        // Elliott Portrait
+        {
+            "LogName": "Elliott Spring & Fall",
+            "Action": "Load",
+            "Target": "Portraits/Elliott",
+            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}_Indoor.png",
+            "When":
+            {
+                "Season": "spring, fall",
+                "Weather": "sun, wind",
+                "ElliottVariant": "modded",
+            },
+        },
+        {
+            "LogName": "Elliott Spring & Fall Rain",
+            "Action": "Load",
+            "Target": "Portraits/Elliott",
+            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
                 "Season": "spring, fall",
@@ -940,46 +1010,22 @@
         {
             "LogName": "Elliott Summer",
             "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Modded/Elliott_{{season}}{{Indoor_SeasonalVariant}}_{{ElliottSummerVariant}}.png",
+            "Target": "Portraits/Elliott",
+            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}{{Indoor_SeasonalVariant}}_{{ElliottSummerVariant}}.png",
             "When":
             {
                 "Season": "summer",
                 "ElliottVariant": "modded",
             }
         },
-        
         {
-            "LogName": "Elliott Winter",
-            "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Modded/Elliott{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "ElliottVariant": "modded",
-            }
-        },
-        // Elliott Portrait
-        {
-            "LogName": "Elliott Spring, Summer, & Fall",
+            "LogName": "Elliott Summer Rain",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}_Indoor.png",
+            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}{{RainSeasonalVariant}}_{{ElliottSummerRainVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
-                "Weather": "sun, wind",
-                "ElliottVariant": "modded",
-            },
-        },
-        {
-            "LogName": "Elliott Spring, Summer, & Fall Rain",
-            "Action": "Load",
-            "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Modded/Elliott_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
+                "Season": "summer",
                 "ElliottVariant": "modded",
             }
         },
@@ -999,43 +1045,44 @@
             "LogName": "Emily Spring, Summer, Fall",
             "Action": "Load",
             "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Modded/Emily_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "FromFile": "Characters/Emily/{{EmilyVariant}}/Emily_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
                 "Season": "spring, summer, fall",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Summer & Fall Rain",
             "Action": "Load",
             "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Modded/Emily_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Characters/Emily/{{EmilyVariant}}/Emily_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
                 "Season": "summer, fall",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Spring Rain",
             "Action": "Load",
             "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Modded/Emily_{{season}}{{RainSeasonalVariant}}_{{EmilySpringRainJacket}}.png",
+            "FromFile": "Characters/Emily/{{EmilyVariant}}/Emily_{{season}}{{RainSeasonalVariant}}_{{EmilySpringRainJacket}}.png",
             "When":
             {
                 "Season": "spring",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Winter Indoor",
             "Action": "Load",
             "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Modded/Emily{{WinterSeasonalVariant}}.png",
+            "FromFile": "Characters/Emily/{{EmilyVariant}}/Emily_Winter_Indoor.png",
             "When":
             {
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
+                "Season": "winter",
                 "Weather": "sun, wind",
             }
         },
@@ -1043,10 +1090,11 @@
             "LogName": "Emily Winter Outdoor",
             "Action": "Load",
             "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Modded/Emily{{WinterSeasonalVariant}}_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
+            "FromFile": "Characters/Emily/{{EmilyVariant}}/Emily_Winter_Outdoor_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
             "When":
             {
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
+                "Season": "winter",
                 "Weather": "snow, rain, storm",
             }
         },
@@ -1056,58 +1104,71 @@
             "LogName": "Emily Summer & Fall Rain",
             "Action": "Load",
             "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Modded/Emily_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
                 "Season": "summer, fall",
                 "Weather": "rain, storm",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Summer & Fall",
             "Action": "Load",
             "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Modded/Emily_{{season}}_Indoor.png",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_{{season}}_Indoor.png",
             "When":
             {
                 "Season": "summer, fall",
                 "Weather": "sun, wind",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Spring",
             "Action": "Load",
             "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Modded/Emily_{{season}}_Indoor_{{EmilySpringShirt}}.png",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_{{season}}_Indoor_{{EmilySpringShirt}}.png",
             "When":
             {
                 "Season": "spring",
                 "Weather": "sun, wind",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
             "LogName": "Emily Spring Rain",
             "Action": "Load",
             "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Modded/Emily_{{season}}{{RainSeasonalVariant}}_{{EmilySpringRainJacket}}.png",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_{{season}}{{RainSeasonalVariant}}_{{EmilySpringRainJacket}}.png",
             "When":
             {
                 "Season": "spring",
-                "EmilyVariant": "modded",
+                "EmilyVariant:disable": "false",
             }
         },
         {
-            "LogName": "Emily Winter",
+            "LogName": "Emily Winter Indoor",
             "Action": "Load",
             "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Modded/Emily_Winter_{{EmilyWinterOutfit}}_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_Winter_{{EmilyWinterOutfit}}_NoHat_NoScarf.png",
             "When":
             {
                 "Season": "winter",
-                "EmilyVariant": "modded",
+                "Weather": "sun, wind",
+                "EmilyVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Emily Winter Outdoor",
+            "Action": "Load",
+            "Target": "Portraits/Emily",
+            "FromFile": "Portraits/Emily/{{EmilyVariant}}/Emily_Winter_{{EmilyWinterOutfit}}_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
+            "When":
+            {
+                "Season": "winter",
+                "Weather": "snow, rain, storm",
+                "EmilyVariant:disable": "false",
             }
         },
         
@@ -1123,29 +1184,60 @@
           }
        },
        {
-          "LogName": "Clothes Therapy Characters",
-          "Action": "Load",
+          "LogName": "Clothes Therapy Characters - Abigail",
+          "Action": "EditImage",
           "Target": "Characters/ClothesTherapyCharacters",
-          "FromFile": "assets/ClothesTherapyCharacters_{{ShaneSelfCare}}.png",
+          "FromFile": "assets/ClothesTherapyCharacters_Abigail.png",
+          "ToArea": {"X": 0, "Y": 160, "Width": 16, "Height": 32},
           "When":
           {
-            "ShaneVariant": "modded",
-            "ShaneSelfCare:dynamic" : "false",
             "AbigailVariant": "modded",
+          },
+       },
+       {
+          "LogName": "Clothes Therapy Characters - Lewis",
+          "Action": "EditImage",
+          "Target": "Characters/ClothesTherapyCharacters",
+          "FromFile": "assets/ClothesTherapyCharacters_Lewis.png",
+          "ToArea": {"X": 0, "Y": 64, "Width": 64, "Height": 32},
+          "When":
+          {
+            "LewisVariant": "modded",
+          },
+       },
+       {
+          "LogName": "Clothes Therapy Characters - Robin",
+          "Action": "EditImage",
+          "Target": "Characters/ClothesTherapyCharacters",
+          "FromFile": "assets/ClothesTherapyCharacters_Robin.png",
+          "ToArea": {"X": 0, "Y": 128, "Width": 64, "Height": 32},
+          "FromArea": {"X": 0, "Y": 0, "Width": 64, "Height": 32},
+          "When":
+          {
             "RobinVariant": "modded",
           },
        },
        {
-          "LogName": "Clothes Therapy Characters",
-          "Action": "Load",
+          "LogName": "Clothes Therapy Characters - Robin",
+          "Action": "EditImage",
           "Target": "Characters/ClothesTherapyCharacters",
-          "FromFile": "assets/ClothesTherapyCharacters_{{Dynamic}}.png",
+          "FromFile": "assets/ClothesTherapyCharacters_Robin.png",
+          "ToArea": {"X": 16, "Y": 160, "Width": 16, "Height": 32},
+          "FromArea": {"X": 0, "Y": 32, "Width": 16, "Height": 32},
+          "When":
+          {
+            "RobinVariant": "modded",
+          },
+       },
+       {
+          "LogName": "Clothes Therapy Characters - Shane",
+          "Action": "EditImage",
+          "Target": "Characters/ClothesTherapyCharacters",
+          "FromFile": "assets/ClothesTherapyCharacters_Shane_{{ShaneModdedStyle}}.png",
+          "ToArea": {"X": 0, "Y": 0, "Width": 64, "Height": 32},
           "When":
           {
             "ShaneVariant": "modded",
-            "ShaneSelfCare:dynamic" : "true",
-            "AbigailVariant": "modded",
-            "RobinVariant": "modded",
           },
        },
         // Evelyn
@@ -1238,7 +1330,7 @@
             }
         },
         {
-            "LogName": "Evelyn Spring Rain",
+            "LogName": "Evelyn Samoan Spring Rain",
             "Action": "Load",
             "Target": "Characters/Evelyn",
             "FromFile": "Characters/Evelyn/{{EvelynVariant}}/Evelyn_Spring{{RainSeasonalVariant}}_{{EvelynSpringOutfit}}.png",
@@ -1603,7 +1695,7 @@
        },
         // Haley
         {
-            "LogName": "Haley Spring Indoor",
+            "LogName": "Haley Spring Indoor - Modded",
             "Action": "Load",
             "Target": "Characters/Haley",
             "FromFile": "Characters/Haley/Modded/Haley_{{season}}{{Indoor_SeasonalVariant}}_{{HaleySpringIndoorSpriteVariant}}.png",
@@ -1615,58 +1707,93 @@
             }
         },
         {
-            "LogName": "Haley Fall Indoor",
+            "LogName": "Haley Spring Indoor - Vanilla",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley_{{season}}{{Indoor_SeasonalVariant}}_{{HaleyFallPalette}}.png",
+            "FromFile": "Characters/Haley/Vanilla/Haley_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "fall",
-                "HaleyVariant": "modded",
+                "Season": "spring",
+                "HaleyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Haley Spring Rain",
+            "Action": "Load",
+            "Target": "Characters/Haley",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_{{season}}{{RainSeasonalVariant}}.png",
+            "When":
+            {
+                "Season": "spring",
+                "HaleyVariant:disable": "false",
             }
         },
         {
             "LogName": "Haley Summer Indoor",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley_{{season}}_{{HaleySummerVariant}}.png",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_{{season}}{{Indoor_SeasonalVariant}}_{{HaleySummerIndoorColor}}.png",
             "When":
             {
                 "Season": "summer",
-                "Weather": "sun, wind",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
+                "HaleySummerVariant": "indoor",
             }
         },
         {
-            "LogName": "Haley Spring/Summer Rain",
+            "LogName": "Haley Summer Beach",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_Summer_Beach.png",
             "When":
             {
-                "Season": "spring, summer",
-                "HaleyVariant": "modded",
+                "Season": "summer",
+                "HaleyVariant:disable": "false",
+                "HaleySummerVariant": "beach",
+                "weather": "sun, wind",
+            }
+        },
+        {
+            "LogName": "Haley Summer Rain",
+            "Action": "Load",
+            "Target": "Characters/Haley",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_{{season}}{{RainSeasonalVariant}}_{{HaleySummerIndoorColor}}.png",
+            "When":
+            {
+                "Season": "summer",
+                "HaleyVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Haley Fall Indoor",
+            "Action": "Load",
+            "Target": "Characters/Haley",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_{{season}}{{Indoor_SeasonalVariant}}_{{HaleyFallPalette}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "HaleyVariant:disable": "false",
             }
         },
         {
             "LogName": "Haley Fall Rain",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley_{{season}}{{RainSeasonalVariant}}_{{HaleyFallPalette}}.png",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley_{{season}}{{RainSeasonalVariant}}_{{HaleyFallPalette}}.png",
             "When":
             {
                 "Season": "fall",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
             }
         },
         {
             "LogName": "Haley Winter Indoor",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley{{WinterSeasonalVariant}}_{{HaleyWinterColor}}.png",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley{{WinterSeasonalVariant}}_{{HaleyWinterColor}}.png",
             "When":
             {
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
                 "Weather": "sun, wind",
             }
         },
@@ -1674,114 +1801,133 @@
             "LogName": "Haley Winter Outdoor",
             "Action": "Load",
             "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Modded/Haley{{WinterSeasonalVariant}}.png",
+            "FromFile": "Characters/Haley/{{HaleyVariant}}/Haley{{WinterSeasonalVariant}}.png",
             "When":
             {
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
                 "Weather": "storm, rain, snow",
             }
         },
-        
         // Haley Portrait
         {
             "LogName": "Haley Spring Indoor Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Spring_Indoor.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Spring{{Indoor_SeasonalVariant}}.png",
             "When":
             {
                 "Season": "spring",
-                "Weather": "sun, wind",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
                 "HaleySpringAltOutfit": "false",
             }
         },
          {
-            "LogName": "Haley Spring Indoor Portrait",
+            "LogName": "Haley Spring Indoor Alt Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Spring_Indoor_Alt.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Spring{{Indoor_SeasonalVariant}}_Alt.png",
             "When":
             {
                 "Season": "spring",
-                "Weather": "sun, wind",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
                 "HaleySpringAltOutfit": "true",
             }
         },
         {
-            "LogName": "Haley Spring & Fall Rain Portrait",
+            "LogName": "Haley Spring Rain Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, fall",
-                "HaleyVariant": "modded",
+                "Season": "spring",
+                "HaleyVariant:disable": "false",
             }
         },
         {
             "LogName": "Haley Summer Indoor Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Summer_Indoor_{{HaleySummerIndoorColor}}.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Summer{{Indoor_SeasonalVariant}}_{{HaleySummerIndoorColor}}.png",
             "When":
             {
                 "Season": "summer",
-                "Weather": "sun, wind",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
                 "HaleySummerVariant:": "indoor",
-            }
-        },
-        {
-            "LogName": "Haley Summer Indoor Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Summer_Indoor_Rain_{{HaleySummerIndoorColor}}.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "rain, storm",
-                "HaleyVariant": "modded",
-                "HaleySummerVariant": "indoor",
             }
         },
         {
             "LogName": "Haley Summer Beach Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Summer_Beach.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Summer_Beach.png",
             "When":
             {
                 "Season": "summer",
-                "HaleyVariant": "modded",
+                "Weather": "sun, wind",
+                "HaleyVariant:disable": "false",
                 "HaleySummerVariant": "beach",
+            }
+        },
+        {
+            "LogName": "Haley Summer Rain Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Haley",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Summer{{RainSeasonalVariant}}_{{HaleySummerIndoorColor}}.png",
+            "When":
+            {
+                "Season": "summer",
+                "Weather": "rain, storm",
+                "HaleyVariant:disable": "false",
             }
         },
         {
             "LogName": "Haley Fall Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley_Fall{{Indoor_SeasonalVariant}}_{{HaleyFallPalette}}.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Fall{{Indoor_SeasonalVariant}}_{{HaleyFallPalette}}.png",
             "When":
             {
                 "Season": "fall",
+                "HaleyVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Haley Fall Rain Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Haley",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley_Fall{{RainSeasonalVariant}}_{{HaleyFallPalette}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "HaleyVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Haley Winter Indoor Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Haley",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley{{WinterSeasonalVariant}}_{{HaleyWinterColor}}.png",
+            "When":
+            {
+                "Season": "winter",
+                "Weather": "sun, wind",
                 "HaleyVariant": "modded",
             }
         },
         {
-            "LogName": "Haley Winter Portrait",
+            "LogName": "Haley Winter Outdoor Portrait",
             "Action": "Load",
             "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Modded/Haley{{WinterSeasonalVariant}}_{{HaleyWinterColor}}.png",
+            "FromFile": "Portraits/Haley/{{HaleyVariant}}/Haley{{WinterSeasonalVariant}}.png",
             "When":
             {
-                "Season": "winter",
-                "HaleyVariant": "modded",
+                "HaleyVariant:disable": "false",
+                "Weather": "storm, rain, snow",
             }
         },
         
-        // Haley Cow Photos
+        // Haley Cow Photos Modded
         {
             "LogName": "Haley Cow Photos - Spring/Summer/Fall",
             "Action": "Load",
@@ -1806,12 +1952,59 @@
                 "HaleySpringIndoorSpriteVariant": "browncam, blackcam, nocuffs, pink, pinknocuffs",
             }
         },
+        // Haley Cow Photos Vanilla
+        {
+            "LogName": "Haley Cow Photos - Summer",
+            "Action": "Load",
+            "Target": "LooseSprites/cowPhotos",
+            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor.png",
+            "When":
+            {
+                "Season": "summer",
+                "Weather": "sun, wind",
+                "HaleyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Haley Cow Photos - Fall",
+            "Action": "Load",
+            "Target": "LooseSprites/cowPhotos",
+            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor.png",
+            "When":
+            {
+                "Season": "Fall",
+                "HaleyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Haley Cow Photos - Summer Rain",
+            "Action": "Load",
+            "Target": "LooseSprites/cowPhotos",
+            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor_Rain.png",
+            "When":
+            {
+                "Season": "summer",
+                "Weather": "rain, storm",
+                "HaleyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Haley Cow Photos - Winter",
+            "Action": "Load",
+            "Target": "LooseSprites/cowPhotos",
+            "FromFile": "Characters/Haley/Vanilla/cowPhotosWinter.png",
+            "When":
+            {
+                "Season": "winter",
+                "HaleyVariant": "vanilla",
+            }
+        },
         // Harvey
         {
-            "LogName": "Harvey Spring",
+            "LogName": "Harvey Sikh Spring",
             "Action": "Load",
             "Target": "Characters/Harvey",
-            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhSpringColor}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhSpringColor}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}_{{HarveySpringOutfit}}.png",
             "When":
             {
                 "Season": "spring",
@@ -1820,7 +2013,7 @@
             }
         },
         {
-            "LogName": "Harvey Summer",
+            "LogName": "Harvey Sikh Summer",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhSummerColor}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -1832,7 +2025,7 @@
             }
         },
         {
-            "LogName": "Harvey Fall",
+            "LogName": "Harvey Sikh Fall",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhFallColor}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -1844,7 +2037,7 @@
             }
         },
         {
-            "LogName": "Harvey Spring Rain",
+            "LogName": "Harvey Sikh Spring Rain",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhSpringColor}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
@@ -1856,7 +2049,7 @@
             }
         },
         {
-            "LogName": "Harvey Summer Rain",
+            "LogName": "Harvey Sikh Summer Rain",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhSummerColor}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
@@ -1868,10 +2061,10 @@
             }
         },
         {
-            "LogName": "Harvey Fall Rain",
+            "LogName": "Harvey Sikh Fall Rain",
             "Action": "Load",
             "Target": "Characters/Harvey",
-            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhFallColor}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhFallColor}}/Harvey_{{season}}{{RainSeasonalVariant}}_{{HarveyFallOutfit}}.png",
             "When":
             {
                 "Season": "fall",
@@ -1880,7 +2073,7 @@
             }
         },
         {
-            "LogName": "Harvey Winter",
+            "LogName": "Harvey Sikh Winter",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/{{HarveySikhWinterColor}}/Harvey{{WinterSeasonalVariant}}.png",
@@ -1892,31 +2085,55 @@
             }
         },
         {
-            "LogName": "Harvey Spring, Summer, & Fall - Rain",
+            "LogName": "Harvey Non-Sikh Spring & Summer Rain",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
+                "Season": "spring, summer",
                 "HarveyVariant": "modded",
                 "HarveyPunjabiVariant": "nonsikh, nonsikhround",
             }
         },
         {
-            "LogName": "Harvey Spring, Summer & Fall",
+            "LogName": "Harvey Non-Sikh Fall Rain",
+            "Action": "Load",
+            "Target": "Characters/Harvey",
+            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{RainSeasonalVariant}}_{{HarveyFallOutfit}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "HarveyVariant": "modded",
+                "HarveyPunjabiVariant": "nonsikh, nonsikhround",
+            }
+        },
+        {
+            "LogName": "Harvey Non-Sikh Spring",
+            "Action": "Load",
+            "Target": "Characters/Harvey",
+            "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}_{{HarveySpringOutfit}}.png",
+            "When":
+            {
+                "Season": "spring",
+                "HarveyVariant": "modded",
+                "HarveyPunjabiVariant": "nonsikh, nonsikhround",
+            }
+        },
+        {
+            "LogName": "Harvey Non-Sikh Summer & Fall",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
+                "Season": "summer, fall",
                 "HarveyVariant": "modded",
                 "HarveyPunjabiVariant": "nonsikh, nonsikhround",
             }
         },
         {
-            "LogName": "Harvey Winter",
+            "LogName": "Harvey Non-Sikh Winter",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey{{WinterSeasonalVariant}}.png",
@@ -1928,7 +2145,7 @@
         },
         // Harvey Portraits
         {
-            "LogName": "Harvey Winter Portrait",
+            "LogName": "Harvey Non-Sikh Winter Portrait",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey{{WinterSeasonalVariant}}.png",
@@ -1940,7 +2157,7 @@
             }
         },
         {
-            "LogName": "Harvey Spring",
+            "LogName": "Harvey Non-Sikh Spring Portrait",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}_{{HarveySpringOutfit}}.png",
@@ -1952,7 +2169,7 @@
             }
         },
         {
-            "LogName": "Harvey Summer & Fall",
+            "LogName": "Harvey Non-Sikh Summer & Fall Portrait",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -1964,7 +2181,7 @@
             }
         },
         {
-            "LogName": "Harvey Spring & Summer Rain",
+            "LogName": "Harvey Non-Sikh Spring & Summer Rain",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
@@ -1976,19 +2193,7 @@
             }
         },
         {
-            "LogName": "Harvey Fall Rain",
-            "Action": "Load",
-            "Target": "Portraits/Harvey",
-            "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "fall",
-                "HarveyVariant": "modded",
-                "HarveyPunjabiVariant": "nonsikh",
-            }
-        },
-        {
-            "LogName": "Harvey Fall Rain",
+            "LogName": "Harvey Non-Sikh Fall Rain",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Modded/{{HarveyPunjabiVariant}}/Harvey_{{season}}{{RainSeasonalVariant}}_{{HarveyFallOutfit}}.png",
@@ -1998,9 +2203,7 @@
                 "HarveyVariant": "modded",
                 "HarveyPunjabiVariant": "nonsikhround",
             }
-        },
-        // Sikh variants
-        
+        },        
         {
             "LogName": "Harvey Sikh Spring",
             "Action": "Load",
@@ -2065,7 +2268,7 @@
             "LogName": "Harvey Sikh Fall Rain",
             "Action": "Load",
             "Target": "Portraits/Harvey",
-            "FromFile": "Portraits/Harvey/Modded/Sikh/{{HarveySikhFallColor}}/Harvey_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Portraits/Harvey/Modded/Sikh/{{HarveySikhFallColor}}/Harvey_{{season}}{{RainSeasonalVariant}}_{{HarveyFallOutfit}}.png",
             "When":
             {
                 "Season": "fall",
@@ -2155,14 +2358,47 @@
         },
         // Jodi
         {
-            "LogName": "Jodi Summer & Fall Sprite",
+            "LogName": "Jodi Vanilla Spring Sprite",
             "Action": "Load",
             "Target": "Characters/Jodi",
             "FromFile": "Characters/Jodi/{{JodiVariant}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "summer, fall",
-                "JodiVariant": "modded",
+                "Season": "spring",
+                "JodiVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Jodi Vanilla Spring Rain Sprite",
+            "Action": "Load",
+            "Target": "Characters/Jodi",
+            "FromFile": "Characters/Jodi/{{JodiVariant}}/Jodi_{{season}}{{RainSeasonalVariant}}.png",
+            "When":
+            {
+                "Season": "spring",
+                "JodiVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Jodi Summer Sprite",
+            "Action": "Load",
+            "Target": "Characters/Jodi",
+            "FromFile": "Characters/Jodi/{{JodiVariant}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "When":
+            {
+                "Season": "summer",
+                "JodiVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Jodi Fall Sprite",
+            "Action": "Load",
+            "Target": "Characters/Jodi",
+            "FromFile": "Characters/Jodi/{{JodiVariant}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "JodiVariant:disable": "false",
             }
         },
         {
@@ -2173,7 +2409,7 @@
             "When":
             {
                 "Season": "summer, fall",
-                "JodiVariant": "modded",
+                "JodiVariant:disable": "false",
             }
         },
         {
@@ -2206,20 +2442,45 @@
             "When":
             {
                 "Season": "winter",
-                "JodiVariant": "modded"
+                "JodiVariant:disable": "false",
             }
         },
         // Jodi Portraits
         {
-            "LogName": "Jodi Summer & Fall Portrait",
+            "LogName": "Jodi Summer Portrait",
             "Action": "Load",
             "Target": "Portraits/Jodi",
             "FromFile": "Portraits/Jodi/Modded/{{JodiSkinColor}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "summer, fall",
+                "Season": "summer",
                  "JodiVariant": "modded",
                  "DayOfWeek:Tuesday": "false",
+            }
+        },
+         {
+            "LogName": "Jodi Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Jodi",
+            "FromFile": "Portraits/Jodi/Modded/{{JodiSkinColor}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
+            "When":
+            {
+                "Season": "fall",
+                 "JodiVariant": "modded",
+                 "DayOfWeek:Tuesday": "false",
+            }
+        },
+        {
+            "LogName": "Jodi Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Jodi",
+            "FromFile": "Portraits/Jodi/Modded/{{JodiSkinColor}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
+            "When":
+            {
+                "Season": "fall",
+                 "JodiVariant": "modded",
+                 "DayOfWeek:Tuesday": "true",
+                 "DayEvent:stardew valley fair": "true",
             }
         },
         {
@@ -2280,6 +2541,19 @@
                 "JodiVariant": "modded",
                 "DayOfWeek:Tuesday": "true",
                 "DayEvent:stardew valley fair": "false",
+            }
+        },
+        {
+            "LogName": "Jodi Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Jodi",
+            "FromFile": "Portraits/Jodi/Modded/{{JodiSkinColor}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
+            "When":
+            {
+                "Season": "fall",
+                 "JodiVariant": "modded",
+                 "DayOfWeek:Tuesday": "true",
+                 "DayEvent:stardew valley fair": "true",
             }
         },
         // Kent
@@ -2445,7 +2719,7 @@
             "LogName": "Leah Butch Spring & Fall",
             "Action": "Load",
             "Target": "Characters/Leah",
-            "FromFile": "Characters/Leah/{{LeahVariant}}/Leah_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "FromFile": "Characters/Leah/{{LeahVariant}}/Leah_{{season}}_Indoor.png",
             "When":
             {
                 "Season": "spring, fall",
@@ -3140,6 +3414,7 @@
             "When":
             {
                 "Season": "spring, summer, fall",
+                "Day:Tuesday"
                 "RobinVariant:disable": "false",
             }
         },
@@ -3197,6 +3472,7 @@
             "When":
             {
                 "Season": "spring",
+                "DayOfWeek:Tuesday": "false",
                 "RobinVariant:disable": "false",
             }
         },
@@ -3234,6 +3510,19 @@
                 "DayOfWeek:Tuesday": "true",
                 "DayEvent:stardew valley fair": "false",
                 "RobinVariant:disable": "false",
+            }
+        },
+        {
+            "LogName": "Robin Fall",
+            "Action": "Load",
+            "Target": "Portraits/Robin",
+            "FromFile": "Portraits/Robin/{{RobinVariant}}/Robin_{{season}}{{Indoor_SeasonalVariant}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "DayOfWeek:Tuesday": "true",
+                "RobinVariant:disable": "false",
+                "DayEvent:stardew valley fair": "true",
             }
         },
         // Sam
@@ -3385,7 +3674,19 @@
                 "Season": "spring, summer, fall"
             }
         },{
-            "LogName": "Sebastian Winter",
+            "LogName": "Sebastian Winter Indoor",
+            "Action": "Load",
+            "Target": "Characters/Sebastian",
+            "FromFile": "Characters/Sebastian/Modded/{{SebastianHairColor}}/Sebastian{{WinterSeasonalVariant}}_{{SebastianWinterOutfit}}.png",
+            "When":
+            {
+                "SebastianVariant": "modded",
+                "Season": "winter",
+                "Weather": "sun, wind",
+            }
+        },
+        {
+            "LogName": "Sebastian Winter Outdoor",
             "Action": "Load",
             "Target": "Characters/Sebastian",
             "FromFile": "Characters/Sebastian/Modded/{{SebastianHairColor}}/Sebastian{{WinterSeasonalVariant}}.png",
@@ -3393,6 +3694,7 @@
             {
                 "SebastianVariant": "modded",
                 "Season": "winter",
+                "Weather": "rain, snow, storm",
             }
         },
         // Sebastian Portraits
@@ -3408,54 +3710,26 @@
             }
         },
         {
-            "LogName": "Sebastian - Spring Black",
+            "LogName": "Sebastian - Spring",
             "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
                 "SebastianVariant": "modded",
-                "SebastianHairColor": "black",
-                "SebastianSpringAltHoodie": false,
+                "SebastianSpringAltHoodie": "false",
                 "Season": "spring",
             }
         },
         {
-            "LogName": "Sebastian - Spring Purple",
-            "Action": "Load",
-            "Target": "Portraits/Sebastian",
-            "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}.png",
-            "When":
-            {
-                "SebastianVariant": "modded",
-                "SebastianHairColor": "purple",
-                "SebastianSpringAltHoodie": false,
-                "Season": "spring",
-            }
-        },
-        {
-            "LogName": "Sebastian - Spring Alt Black",
+            "LogName": "Sebastian - Spring Alt",
             "Action": "Load",
             "Target": "Portraits/Sebastian",
             "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}_Alt.png",
             "When":
             {
                 "SebastianVariant": "modded",
-                "SebastianHairColor": "black",
-                "SebastianSpringAltHoodie": true,
-                "Season": "spring",
-            }
-        },
-        {
-            "LogName": "Sebastian - Spring Alt Purple",
-            "Action": "Load",
-            "Target": "Portraits/Sebastian",
-            "FromFile": "Portraits/Sebastian/Modded/{{SebastianHairColor}}/Sebastian_{{season}}{{Indoor_SeasonalVariant}}_Alt.png",
-            "When":
-            {
-                "SebastianVariant": "modded",
-                "SebastianHairColor": "purple",
-                "SebastianSpringAltHoodie": true,
+                "SebastianSpringAltHoodie": "true",
                 "Season": "spring",
             }
         },
@@ -3842,7 +4116,6 @@
             {
                 "AbigailVariant": "vanilla",
                 "Season": "spring, summer, fall",
-                "HasFile:Abigail_{{season}}{{RainSeasonalVariant}}_{{AbigailRainHat}}.png": true
             }
         },
         {
@@ -4028,6 +4301,20 @@
                 "DayEvent:stardew valley fair": "false",
             }
         },
+        {  
+            "LogName": "Caroline Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Caroline",
+            "FromFile": "Portraits/Caroline/Vanilla/Caroline_Fall_{{CarolineFallVariant}}.png",
+            "When":
+            {
+                "Season": "fall",
+                "Weather": "sun, wind",
+                "CarolineVariant": "vanilla",
+                "DayOfWeek:Tuesday": "true",
+                "DayEvent:stardew valley fair": "true",
+            }
+        },
         // Clint
         {
             "LogName": "Clint Spring, Summer, & Fall Sprite",
@@ -4154,57 +4441,13 @@
             }
         },
         // Elliott
-        {
-            "LogName": "Elliott Spring & Fall",
-            "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Vanilla/Elliott_{{season}}_Indoor.png",
-            "When":
-            {
-                "Season": "spring, fall",
-                "Weather": "sun, wind",
-                "ElliottVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Elliott Summer",
-            "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Vanilla/Elliott_{{season}}_Indoor_{{ElliottSummerVariant}}.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "sun, wind",
-                "ElliottVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Elliott Rain",
-            "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Vanilla/Elliott_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
-                "ElliottVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Elliott Winter",
-            "Action": "Load",
-            "Target": "Characters/Elliott",
-            "FromFile": "Characters/Elliott/Vanilla/Elliott{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "ElliottVariant": "vanilla",
-            }
-        },
+        // Elliott's sprites are in the Diverse section above.
         // Elliott Portrait
         {
             "LogName": "Elliott Spring & Fall",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottFacing}}/Elliott_{{season}}_Indoor.png",
+            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottVanillaStyle}}/Elliott_{{season}}_Indoor.png",
             "When":
             {
                 "Season": "spring, fall",
@@ -4216,7 +4459,7 @@
             "LogName": "Elliott Spring & Fall - Rain",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottFacing}}/Elliott_{{season}}{{RainSeasonalVariant}}.png",
+            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottVanillaStyle}}/Elliott_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
                 "Season": "spring, fall",
@@ -4227,7 +4470,7 @@
             "LogName": "Elliott Winter",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottFacing}}/Elliott{{WinterSeasonalVariant}}.png",
+            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottVanillaStyle}}/Elliott{{WinterSeasonalVariant}}.png",
             "When":
             {
                 "Season": "winter",
@@ -4238,7 +4481,7 @@
             "LogName": "Elliott Summer",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottFacing}}/Elliott_{{season}}_Indoor_{{ElliottSummerVariant}}.png",
+            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottVanillaStyle}}/Elliott_{{season}}_Indoor_{{ElliottSummerVariant}}.png",
             "When":
             {
                 "Season": "summer",
@@ -4250,7 +4493,7 @@
             "LogName": "Elliott Summer Rain",
             "Action": "Load",
             "Target": "Portraits/Elliott",
-            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottFacing}}/Elliott_{{season}}{{RainSeasonalVariant}}_{{ElliottSummerRainVariant}}.png",
+            "FromFile": "Portraits/Elliott/Vanilla/{{ElliottVanillaStyle}}/Elliott_{{season}}{{RainSeasonalVariant}}_{{ElliottSummerRainVariant}}.png",
             "When":
             {
                 "Season": "summer",
@@ -4259,110 +4502,7 @@
         },
         
         // Emily
-        {
-            "LogName": "Emily Spring, Summer, Fall",
-            "Action": "Load",
-            "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Vanilla/Emily_{{season}}{{Indoor_SeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Spring, Summer, & Fall Rain",
-            "Action": "Load",
-            "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Vanilla/Emily_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Winter Indoor",
-            "Action": "Load",
-            "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Vanilla/Emily{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "EmilyVariant": "vanilla",
-                "Weather": "sun, wind",
-            }
-        },
-        {
-            "LogName": "Emily Winter Outdoor",
-            "Action": "Load",
-            "Target": "Characters/Emily",
-            "FromFile": "Characters/Emily/Vanilla/Emily{{WinterSeasonalVariant}}_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
-            "When":
-            {
-                "EmilyVariant": "vanilla",
-                "Weather": "snow, rain, storm",
-            }
-        },
-        
-        // Emily Portrait
-        {
-            "LogName": "Emily Summer & Fall Rain",
-            "Action": "Load",
-            "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Vanilla/Emily_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "summer, fall",
-                "Weather": "rain, storm",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Summer & Fall",
-            "Action": "Load",
-            "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Vanilla/Emily_{{season}}_Indoor.png",
-            "When":
-            {
-                "Season": "summer, fall",
-                "Weather": "sun, wind",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Spring",
-            "Action": "Load",
-            "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Vanilla/Emily_{{season}}_Indoor_{{EmilySpringShirt}}.png",
-            "When":
-            {
-                "Season": "spring",
-                "Weather": "sun, wind",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Spring Rain",
-            "Action": "Load",
-            "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Vanilla/Emily_{{season}}{{RainSeasonalVariant}}_{{EmilySpringRainJacket}}.png",
-            "When":
-            {
-                "Season": "spring",
-                "EmilyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Emily Winter",
-            "Action": "Load",
-            "Target": "Portraits/Emily",
-            "FromFile": "Portraits/Emily/Vanilla/Emily_Winter_{{EmilyWinterOutfit}}_{{EmilyWinterHat}}_{{EmilyWinterScarf}}.png",
-            "When":
-            {
-                "Season": "winter",
-                "EmilyVariant": "vanilla",
-            }
-        },
+        // Emily's sprites and portraits are in the Diverse section above.
         // Evelyn
         // Evelyn's sprites and portraits are in the Diverse section above.
         // George
@@ -4409,280 +4549,51 @@
         // Gus
         // Gus sprites and portraits are in the Diverse section above.
         // Haley
-        {
-            "LogName": "Haley Spring Indoor Alt",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor_White.png",
-            "When":
-            {
-                "Season": "spring",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-                "HaleySpringAltOutfit": true
-            }
-        },
-        {
-            "LogName": "Haley Spring Indoor",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor_Pink.png",
-            "When":
-            {
-                "Season": "spring",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-                "HaleySpringAltOutfit": false
-            }
-        },
-        {
-            "LogName": "Haley Fall Indoor",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Fall_Indoor_{{HaleyFallPalette}}.png",
-            "When":
-            {
-                "Season": "fall",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Spring Rain",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Spring_Indoor_Rain.png",
-            "When":
-            {
-                "Season": "spring",
-                "Weather": "rain, storm",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Fall Rain",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley_Fall_Indoor_Rain_{{HaleyFallPalette}}.png",
-            "When":
-            {
-                "Season": "fall",
-                "Weather": "rain, storm",
-                "HaleyVariant": "vanilla",
-            }
-        },
-         {
-            "LogName": "Haley Summer Beach",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/vanilla/Haley_Summer_Beach.png",
-            "When":
-            {
-                "Season": "summer",
-                "HaleySummerVariant": "beach",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Summer Indoor",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/vanilla/Haley_Summer_Indoor.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "sun, wind",
-                "HaleySummerVariant": "indoor",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Summer Rain",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/vanilla/Haley_Summer_Indoor_Rain.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "rain, storm",
-                "HaleySummerVariant": "indoor",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Winter",
-            "Action": "Load",
-            "Target": "Characters/Haley",
-            "FromFile": "Characters/Haley/Vanilla/Haley{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "HaleyVariant": "vanilla",
-            }
-        },
-       
-        // Haley Portrait
-        {
-            "LogName": "Haley Spring Indoor Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_Spring_Indoor.png",
-            "When":
-            {
-                "Season": "spring",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Spring Rain Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Fall Rain Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_{{season}}{{RainSeasonalVariant}}_{{HaleyFallPalette}}.png",
-            "When":
-            {
-                "Season": "fall",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Summer Indoor Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_Summer_Indoor.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-                "HaleySummerVariant": "indoor",
-            }
-        },
-        {
-            "LogName": "Haley Summer Indoor Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_Summer_Indoor_Rain.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "rain, storm",
-                "HaleyVariant": "vanilla",
-                "HaleySummerVariant": "indoor",
-            }
-        },
-        {
-            "LogName": "Haley Summer Beach Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_Summer_Beach.png",
-            "When":
-            {
-                "Season": "summer",
-                "HaleyVariant": "vanilla",
-                "HaleySummerVariant": "beach",
-            }
-        },
-        {
-            "LogName": "Haley Fall Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley_Fall{{Indoor_SeasonalVariant}}_{{HaleyFallPalette}}.png",
-            "When":
-            {
-                "Season": "fall",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Winter Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Haley",
-            "FromFile": "Portraits/Haley/Vanilla/Haley{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "winter",
-                "HaleyVariant": "vanilla",
-            }
-        },
+        // Haley sprites and portraits are in the Diverse section above.
         
-        // Haley Cow Photos
-        {
-            "LogName": "Haley Cow Photos - Summer",
-            "Action": "Load",
-            "Target": "LooseSprites/cowPhotos",
-            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "sun, wind",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Cow Photos - Fall",
-            "Action": "Load",
-            "Target": "LooseSprites/cowPhotos",
-            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor.png",
-            "When":
-            {
-                "Season": "Fall",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Cow Photos - Summer Rain",
-            "Action": "Load",
-            "Target": "LooseSprites/cowPhotos",
-            "FromFile": "Characters/Haley/Vanilla/cowPhotos_{{season}}_Indoor_Rain.png",
-            "When":
-            {
-                "Season": "summer",
-                "Weather": "rain, storm",
-                "HaleyVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Haley Cow Photos - Winter",
-            "Action": "Load",
-            "Target": "LooseSprites/cowPhotos",
-            "FromFile": "Characters/Haley/Vanilla/cowPhotosWinter.png",
-            "When":
-            {
-                "Season": "winter",
-                "HaleyVariant": "vanilla",
-            }
-        },
+        
         // Harvey
         {
-            "LogName": "Harvey Spring, Summer & Fall Indoor",
+            "LogName": "Harvey Vanilla Spring",
+            "Action": "Load",
+            "Target": "Characters/Harvey",
+            "FromFile": "Characters/Harvey/Vanilla/Harvey_{{season}}{{Indoor_SeasonalVariant}}_{{HarveySpringOutfit}}.png",
+            "When":
+            {
+                "Season": "spring",
+                "HarveyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Harvey Vanilla Summer & Fall",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Vanilla/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
+                "Season": "summer, fall",
                 "HarveyVariant": "vanilla",
             }
         },
         {
-            "LogName": "Harvey Rain",
+            "LogName": "Harvey Vanilla Spring & Summer Rain",
             "Action": "Load",
             "Target": "Characters/Harvey",
             "FromFile": "Characters/Harvey/Vanilla/Harvey_{{season}}{{RainSeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
+                "Season": "spring, summer",
+                "HarveyVariant": "vanilla",
+            }
+        },
+        {
+            "LogName": "Harvey Vanilla Fall Rain",
+            "Action": "Load",
+            "Target": "Characters/Harvey",
+            "FromFile": "Characters/Harvey/Vanilla/Harvey_{{season}}{{RainSeasonalVariant}}_{{HarveyFallOutfit}}.png",
+            "When":
+            {
+                "Season": "fall",
                 "HarveyVariant": "vanilla",
             }
         },
@@ -4699,13 +4610,24 @@
         },
         // Harvey Portraits
          {
-            "LogName": "Harvey Spring, Summer & Fall Indoor",
+            "LogName": "Harvey Vanilla Spring Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Harvey",
+            "FromFile": "Portraits/Harvey/Vanilla/Harvey_{{season}}{{Indoor_SeasonalVariant}}_{{HarveySpringOutfit}}.png",
+            "When":
+            {
+                "Season": "spring",
+                "HarveyVariant": "vanilla",
+            }
+        },
+         {
+            "LogName": "Harvey Vanilla Summer & Fall Portrait",
             "Action": "Load",
             "Target": "Portraits/Harvey",
             "FromFile": "Portraits/Harvey/Vanilla/Harvey_{{season}}{{Indoor_SeasonalVariant}}.png",
             "When":
             {
-                "Season": "spring, summer, fall",
+                "Season": "summer, fall",
                 "HarveyVariant": "vanilla",
             }
         },
@@ -4811,40 +4733,7 @@
             },
         },
         // Jodi
-        
-        {
-            "LogName": "Jodi Spring, Summer & Fall Sprite",
-            "Action": "Load",
-            "Target": "Characters/Jodi",
-            "FromFile": "Characters/Jodi/Vanilla/Jodi_{{season}}{{Indoor_SeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
-                "JodiVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Jodi Spring, Summer & Fall Rain Sprite",
-            "Action": "Load",
-            "Target": "Characters/Jodi",
-            "FromFile": "Characters/Jodi/Vanilla/Jodi_{{season}}{{RainSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "spring, summer, fall",
-                "JodiVariant": "vanilla",
-            }
-        },
-        {
-            "LogName": "Jodi Winter Sprite",
-            "Action": "Load",
-            "Target": "Characters/Jodi",
-            "FromFile": "Characters/Jodi/vanilla/Jodi{{WinterSeasonalVariant}}.png",
-            "When":
-            {
-                "Season": "winter",
-                 "JodiVariant": "vanilla",
-            }
-        },
+        // Jodi's sprites are in the Diverse section above.
         // Jodi Portraits
         {
             "LogName": "Jodi Spring & Summer Portrait",
@@ -4859,7 +4748,7 @@
             }
         },
         {
-            "LogName": "Jodi Rain Portrait",
+            "LogName": "Jodi Spring, Summer & Fall Rain Portrait",
             "Action": "Load",
             "Target": "Portraits/Jodi",
             "FromFile": "Portraits/Jodi/Vanilla/Jodi_{{season}}{{RainSeasonalVariant}}.png",
@@ -4904,6 +4793,19 @@
                  "JodiVariant": "vanilla",
                 "DayOfWeek:Tuesday": "true",
                 "DayEvent:stardew valley fair": "false",
+            }
+        },
+        {
+            "LogName": "Jodi Fall Portrait",
+            "Action": "Load",
+            "Target": "Portraits/Jodi",
+            "FromFile": "Portraits/Jodi/Vanilla/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
+            "When":
+            {
+                "Season": "fall",
+                 "JodiVariant": "vanilla",
+                "DayOfWeek:Tuesday": "true",
+                "DayEvent:stardew valley fair": "true",
             }
         },
         // Kent
