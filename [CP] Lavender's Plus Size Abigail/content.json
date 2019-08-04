@@ -78,7 +78,7 @@
 			"LogName": "Maternity Sprites",
 			"Action": "EditImage",
 			"Target": "Characters/Abigail",
-			"FromFile": "sprites/Abigail_Maternity",
+			"FromFile": "sprites/Abigail_Maternity.png",
 			"When":
 			{
 				"Maternity Sprites": "true",
