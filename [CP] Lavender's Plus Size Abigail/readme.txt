@@ -1,0 +1,3 @@
+Welcome to the Lavender's Plus Size Abigail variant of Diverse Stardew Valley with Seasonal Outfits! If you are using this alongside the main DSVO mod, make sure to set the "AbigailVariant" config option to "disable" so it doesn't conflict with this one.
+
+This mod features dynamic seasonal outfits depending on weather and location, with some seasons having alternating outfits so there's no need to choose between outfit variants. Maternity sprites may be enabled in the config file that generates after running the game with this mod installed.

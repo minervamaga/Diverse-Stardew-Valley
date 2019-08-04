@@ -120,167 +120,247 @@
         "AbigailVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "AlexVariant":
         {
             "AllowValues": "vanilla, hispanic, samoan, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "CarolineVariant":
         {
-            "AllowValues": "vanilla, modded, disable"
+            "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "ClintVariant":
         {
-            "AllowValues": "vanilla, disable"
+            "AllowValues": "vanilla, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "DemetriusVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "ElliottVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "EmilyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "EvelynVariant":
         {
             "AllowValues": "vanilla, hispanic, samoan, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "GeorgeVariant":
         {
             "AllowValues": "vanilla, hispanic, samoan, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "GuntherVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "GusVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "HaleyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "HarveyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "JasVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "JodiVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "KentVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "LeahVariant":
         {
             "AllowValues": "vanilla, native, butch, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "LewisVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "LinusVariant":
         {
             "AllowValues": "vanilla, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "MarnieVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "MaruVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "PamVariant":
         {
             "AllowValues": "vanilla, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "PennyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "PierreVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "RobinVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "SamVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "SandyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "SebastianVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "ShaneVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "VincentVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "WillyVariant":
         {
             "AllowValues": "vanilla, modded, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         "WizardVariant":
         {
             "AllowValues": "vanilla, disable",
+            "Default": "vanilla",
+            "AllowBlank": false
         },
         // MiscOptions
         "MaternitySprites":
         {
             "AllowValues": "false, true",
+            "Default": "false",
+            "AllowBlank": false
         },
         
         // Individual Options
         // Abigail
         "AbigailSpringJacketColor":
         {
-            "AllowValues": "red, blue"
+            "AllowValues": "red, blue",
+            "AllowBlank": false,
+            "Default": "red"
         },
         "AbigailRainHat":
         {
-            "AllowValues": "hat, nohat"
+            "AllowValues": "hat, nohat",
+            "AllowBlank": false,
+            "Default": "hat"
         },
         "AbigailBodyType":
         {
-            "AllowValues": "vanilla, plussize"
+            "AllowValues": "vanilla, plussize",
+            "AllowBlank": false,
+            "Default": "vanilla"
         },
         // Caroline
         "CarolineHairColor":
         {
             "AllowValues": "black, green",
+            "AllowBlank": false,
+            "Default": "black"
         },
         "CarolineSpringVariant":
         {
             "AllowValues": "sweatercollar, stripedknit",
+            "AllowBlank": false,
+            "Default": "sweatercollar"
         },
         "CarolineSummerVariant":
         {
-            "AllowValues": "hat, nohat"
+            "AllowValues": "hat, nohat",
+            "AllowBlank": false,
+            "Default": "hat"
         },
         "CarolineFallVariant":
         {
-            "AllowValues": "indoor, outdoor"
+            "AllowValues": "indoor, outdoor",
+            "AllowBlank": false,
+            "Default": "indoor"
         },
         // Clint
         "ClintStyle":
@@ -1912,7 +1992,6 @@
             {
                 "Season": "winter",
                 "Weather": "sun, wind",
-                "HaleyVariant": "modded",
             }
         },
         {
@@ -2541,19 +2620,6 @@
                 "JodiVariant": "modded",
                 "DayOfWeek:Tuesday": "true",
                 "DayEvent:stardew valley fair": "false",
-            }
-        },
-        {
-            "LogName": "Jodi Fall Portrait",
-            "Action": "Load",
-            "Target": "Portraits/Jodi",
-            "FromFile": "Portraits/Jodi/Modded/{{JodiSkinColor}}/Jodi_{{season}}{{Indoor_SeasonalVariant}}_{{JodiFallShirtColor}}.png",
-            "When":
-            {
-                "Season": "fall",
-                 "JodiVariant": "modded",
-                 "DayOfWeek:Tuesday": "true",
-                 "DayEvent:stardew valley fair": "true",
             }
         },
         // Kent
@@ -3414,7 +3480,6 @@
             "When":
             {
                 "Season": "spring, summer, fall",
-                "Day:Tuesday"
                 "RobinVariant:disable": "false",
             }
         },
@@ -3473,6 +3538,7 @@
             {
                 "Season": "spring",
                 "DayOfWeek:Tuesday": "false",
+                "DayEvent:stardew valley fair": "false",
                 "RobinVariant:disable": "false",
             }
         },
@@ -3513,7 +3579,7 @@
             }
         },
         {
-            "LogName": "Robin Fall",
+            "LogName": "Robin Fair",
             "Action": "Load",
             "Target": "Portraits/Robin",
             "FromFile": "Portraits/Robin/{{RobinVariant}}/Robin_{{season}}{{Indoor_SeasonalVariant}}.png",
@@ -3526,6 +3592,7 @@
             }
         },
         // Sam
+
         {
             "LogName": "Sam Spring/Summer/Fall",
             "Action": "Load",
@@ -5770,5 +5837,105 @@
             }
         },
         // E N D  M A T E R N I T Y
+
+        //FESTIVAL EDITS
+
+        // B E G I N  F E S T I V A L S P I T E S
+
+        /*{
+            "LogName": "Festival Character Sprites Bachlorettes - Vanilla",
+            "Action": "EditImage",
+            "Target": "Characters/Abigail, Characters/Emily, Characters/Haley, Characters/Leah, Characters/Maru, Characters/Penny",
+            "FromFile": "Characters/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Characters/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Character Sprites Bachlorettes - Modded",
+            "Action": "EditImage",
+            "Target": "Characters/Abigail, Characters/Emily, Characters/Haley, Characters/Leah, Characters/Maru, Characters/Penny",
+            "FromFile": "Characters/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Characters/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Character Sprites Bachelors & Villagers - Vanilla",
+            "Action": "EditImage",
+            "Target": "Characters/Alex, Characters/Caroline, Characters/Clint, Characters/Demetrius, Characters/Elliott, Characters/Evelyn, Characters/George, Characters/Gus, Characters/Harvey, Characters/Jas, Characters/Jodi, Characters/Kent, Characters/Lewis, Characters/Linus, Characters/Marnie, Characters/Pam, Characters/Pierre, Characters/Robin, Characters/Shane, Characters/Vincent, Characters/Willy",
+            "FromFile": "Characters/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Characters/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Character Sprites Bachelors & Villagers - Modded",
+            "Action": "EditImage",
+            "Target": "Characters/Alex, Characters/Caroline, Characters/Clint, Characters/Demetrius, Characters/Elliott, Characters/Evelyn, Characters/George, Characters/Gus, Characters/Harvey, Characters/Jas, Characters/Jodi, Characters/Kent, Characters/Lewis, Characters/Linus, Characters/Marnie, Characters/Pam, Characters/Pierre, Characters/Robin, Characters/Shane, Characters/Vincent, Characters/Willy",
+            "FromFile": "Characters/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Characters/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Portrait Sprites Bachlorettes - Vanilla",
+            "Action": "EditImage",
+            "Target": "Portraits/Abigail, Portraits/Emily, Portraits/Haley, Portraits/Leah, Portraits/Maru, Portraits/Penny",
+            "FromFile": "Portraits/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Portraits/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Portrait Sprites Bachlorettes - Modded",
+            "Action": "EditImage",
+            "Target": "Portraits/Abigail, Portraits/Emily, Portraits/Haley, Portraits/Leah, Portraits/Maru, Portraits/Penny",
+            "FromFile": "Portraits/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Portraits/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Portrait Sprites Bachelors & Villagers - Vanilla",
+            "Action": "EditImage",
+            "Target": "Portraits/Alex, Portraits/Caroline, Portraits/Clint, Portraits/Demetrius, Portraits/Elliott, Portraits/Evelyn, Portraits/George, Portraits/Gus, Portraits/Harvey, Portraits/Jas, Portraits/Jodi, Portraits/Kent, Portraits/Lewis, Portraits/Linus, Portraits/Marnie, Portraits/Pam, Portraits/Pierre, Portraits/Robin, Portraits/Shane, Portraits/Vincent, Portraits/Willy",
+            "FromFile": "Portraits/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Portraits/{{TargetWithoutPath}}/Vanilla/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },
+
+        {
+            "LogName": "Festival Portrait Sprites Bachelors & Villagers - Modded",
+            "Action": "EditImage",
+            "Target": "Portraits/Alex, Portraits/Caroline, Portraits/Clint, Portraits/Demetrius, Portraits/Elliott, Portraits/Evelyn, Portraits/George, Portraits/Gus, Portraits/Harvey, Portraits/Jas, Portraits/Jodi, Portraits/Kent, Portraits/Lewis, Portraits/Linus, Portraits/Marnie, Portraits/Pam, Portraits/Pierre, Portraits/Robin, Portraits/Shane, Portraits/Vincent, Portraits/Willy",
+            "FromFile": "Portraits/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png",
+            "When":
+            {
+                "HasFile:Portraits/{{TargetWithoutPath}}/Modded/Festivals/{{Festival}}/{{TargetWithoutPath}}_{{Festival}}.png": true,
+                "DayEvent:{{Festival}}": true
+            },
+        },*/
     ]
 }
