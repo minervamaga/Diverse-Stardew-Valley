@@ -1,0 +1,156 @@
+{ 
+	"Format": "1.9",
+    "DynamicTokens": [
+		{
+			"Name": "WeatherVariant",
+			"Value": "Base",
+		},
+        {
+            "Name": "WeatherVariant",
+            "Value": "Rain",
+            "When":
+            {
+                "Season": "spring, summer, fall",
+                "Weather": "rain, storm, snow",
+				"IsOutdoors": "true"
+            },
+        },
+		{
+			"Name": "WeatherVariant",
+			"Value": "Snow",
+			"When":
+			{
+				"Season": "winter",
+				"Weather": "snow, rain, storm",
+				"IsOutdoors": "true"
+			},
+		},
+		// Note: all this number nonsense can be simplified once CP has that randomizer
+		{
+			"Name": "#",
+			"Value": "1",
+		},
+		{
+			"Name": "#",
+			"Value": "2",
+			"When":
+			{
+				"Season": "spring",
+				"DayOfWeek": "Tuesday, Thursday, Saturday",
+				"HasFile:portraits/Maru_{{season}}_Outfit2_{{WeatherVariant}}.png": true,
+				"HasFile:sprites/Maru_{{season}}_Outfit2_{{WeatherVariant}}.png": true
+			},
+		},
+		{
+			"Name": "#",
+			"Value": "2",
+			"When":
+			{
+				"Season": "fall",
+				"DayOfWeek": "Tuesday, Friday",
+				"HasFile:portraits/Maru_{{season}}_Outfit2_{{WeatherVariant}}.png": true,
+				"HasFile:sprites/Maru_{{season}}_Outfit2_{{WeatherVariant}}.png": true
+			},
+		},
+		{
+			"Name": "#",
+			"Value": "3",
+			"When":
+			{
+				"Season": "fall",
+				"DayOfWeek": "Wednesday, Monday",
+				"HasFile:portraits/Maru_{{season}}_Outfit3_{{WeatherVariant}}.png": true,
+				"HasFile:sprites/Maru_{{season}}_Outfit3_{{WeatherVariant}}.png": true
+			},
+		},
+		{
+			"Name": "Pendant",
+			"Value": "Base",
+		},
+		{
+			"Name": "Pendant",
+			"Value": "fall2",
+			"When":
+			{
+				"Season": "fall",
+				"#": "2"
+			}
+		},
+		{
+			"Name": "Pendant",
+			"Value": "Hospital",
+			"When":
+			{
+				"LocationName": "Hospital"
+			}
+		},
+	],
+	"ConfigSchema":
+	{
+		"HospitalVariant":
+        {
+            "AllowValues": "lightscrubs, darkscrubs, white",
+			"Default": "lightscrubs"
+        },
+		"Maternity Sprites":
+		{
+			"AllowValues": "true, false",
+			"Default": "false"
+		},
+	},
+	"Changes":[
+		{
+			"LogName": "Portraits",
+			"Action": "Load",
+			"Target": "Portraits/Maru",
+			"FromFile": "portraits/Maru_{{season}}_Outfit{{#}}_{{WeatherVariant}}.png",
+			"When":
+			{
+				"LocationName:Hospital": false
+			}
+		},
+		{
+			"LogName": "Sprites",
+			"Action": "Load",
+			"Target": "Characters/Maru",
+			"FromFile": "sprites/Maru_{{season}}_Outfit{{#}}_{{WeatherVariant}}.png",
+		},
+		{
+			"LogName": "Hospital Portraits",
+			"Action": "Load",
+			"Target": "Portraits/Maru, Portraits/Maru_Hospital", // Bug workaround. Can remove extra target and unnecessary location conditions in SMAPI 3.0
+			"FromFile": "portraits/Maru_Hospital_{{HospitalVariant}}.png",
+			"When":
+			{
+				"LocationName:Hospital": true
+			}
+		},
+		{
+			"LogName": "Hospital Sprites",
+			"Action": "Load",
+			"Target": "Characters/Maru_Hospital",
+			"FromFile": "sprites/Maru_Hospital_{{HospitalVariant}}.png",
+		},
+		{
+			"LogName": "Maternity Sprites",
+			"Action": "EditImage",
+			"Target": "Characters/Maru",
+			"FromFile": "sprites/Maru_Maternity.png",
+			"When":
+			{
+				"Maternity Sprites": "true",
+			}
+		},
+		{
+			"LogName": "Mermaid Pendant",
+			"Action": "EditImage",
+			"PatchMode": "Overlay",
+			"Target": "Portraits/Maru, Portraits/Maru_Hospital",
+			"FromFile": "pendants/{{Pendant}}.png",
+			"When":
+			{
+				"Relationship:Maru": "Married",
+			},
+		},
+	]
+}
